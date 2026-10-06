@@ -1,0 +1,24 @@
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #202223; background: #f6f6f7; }
+body { margin: 0; }
+* { box-sizing: border-box; }
+.app-nav { display: flex; gap: 24px; padding: 16px 24px; background: white; border-bottom: 1px solid #e0e0e0; flex-wrap: wrap; }
+.app-nav a { font-size: 14px; font-weight: 600; color: #176746; text-decoration: none; }
+.app-nav a:hover { text-decoration: underline; }
+.demo-label { padding: 10px 24px; color: #475348; font-size: 12px; background: #eaf5ec; }
+.stack { display: grid; gap: 20px; }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+.metric { padding: 18px; border: 1px solid #e2e3e3; border-radius: 12px; background: white; }
+.metric strong { display: block; font-size: 28px; margin-top: 6px; }
+.table-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { font-weight: 600; background: #f7f8f8; text-align: left; color: #5a6260; }
+th, td { padding: 12px; border-bottom: 1px solid #e6e8e7; vertical-align: top; white-space: nowrap; }
+td.wrap { white-space: normal; min-width: 170px; }
+.muted { color: #63706a; font-size: 13px; }
+.form-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+.line-grid { display: grid; grid-template-columns: minmax(130px, 1fr) 130px 2fr auto; gap: 16px; align-items: start; }
+.draft-line { padding: 20px 0; border-bottom: 1px solid #e6e8e7; }
+.actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.total { font-size: 24px; font-weight: 650; margin: 0; }
+.error-page { padding: 40px; }
+@media (max-width: 680px) { .form-grid, .line-grid { grid-template-columns: 1fr; } .app-nav { gap: 16px; padding: 16px; } }

@@ -1,0 +1,6 @@
+name = "Company Replenishment"
+roles = ["frontend", "backend"]
+webhooks_path = "/webhooks/app/uninstalled"
+
+[commands]
+dev = "pnpm run dev"

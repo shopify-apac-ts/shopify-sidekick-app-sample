@@ -1,0 +1,45 @@
+{
+  "name": "shopify-sidekick-app-sample",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env server.mjs",
+    "dev:demo": "DEMO_MODE=true node --env-file-if-exists=.env server.mjs",
+    "build": "react-router build",
+    "start": "NODE_ENV=production node --env-file-if-exists=.env server.mjs",
+    "start:demo": "DEMO_MODE=true NODE_ENV=production node --env-file-if-exists=.env server.mjs",
+    "typecheck": "react-router typegen && tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "extensions:build": "esbuild extensions/company-data/src/index.ts --bundle --format=esm --platform=browser --outfile=build/extensions/company-data.js",
+    "shopify:dev": "shopify app dev",
+    "shopify:validate": "shopify app config validate --json",
+    "shopify:deploy": "shopify app deploy"
+  },
+  "dependencies": {
+    "@react-router/express": "7.18.2",
+    "@react-router/node": "7.18.2",
+    "@shopify/shopify-api": "^15.0.0",
+    "@shopify/shopify-app-react-router": "^3.0.1",
+    "express": "^4.22.2",
+    "isbot": "^5.2.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router": "7.18.2",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@react-router/dev": "7.18.2",
+    "@shopify/app-bridge-types": "^0.7.2",
+    "@shopify/polaris-types": "1.0.1",
+    "@types/express": "^4.17.21",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}

@@ -1,0 +1,15 @@
+api_version = "2026-10"
+
+[[extensions]]
+name = "Company inventory data"
+description = "Read dummy internal warehouse availability, 30-day sales, dated inbound shipments, supplier delays, purchasing rules and registered replenishment requests. Prepare inventory replenishment optimization plans for merchant review. All data tools are read-only."
+handle = "company-data"
+type = "ui_extension"
+
+[[extensions.targeting]]
+module = "./src/index.ts"
+target = "admin.app.tools.data"
+tools = "./tools.json"
+
+[extensions.capabilities]
+network_access = true

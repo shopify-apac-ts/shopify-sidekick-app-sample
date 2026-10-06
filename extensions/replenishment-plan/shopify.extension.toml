@@ -1,0 +1,22 @@
+api_version = "2026-10"
+
+[[extensions]]
+name = "Prepare company replenishment"
+description = "Create or edit an inventory replenishment optimization plan using internal company stock, sales, inbound shipments and supplier rules. Stage quantities and purchasing reasons in the app form. The merchant registers the request with the Register request button."
+handle = "replenishment-plan"
+type = "admin_link"
+
+[[extensions.targeting]]
+target = "admin.app.intent.link"
+url = "/app/plan"
+tools = "./tools.json"
+
+[[extensions.targeting.intents]]
+type = "application/optimization-plan"
+action = "create"
+schema = "./intent-schema.json"
+
+[[extensions.targeting.intents]]
+type = "application/optimization-plan"
+action = "edit"
+schema = "./intent-schema.json"

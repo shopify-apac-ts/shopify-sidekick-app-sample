@@ -1,0 +1,26 @@
+{
+  "$schema": "https://extensions.shopifycdn.com/shopifycloud/schemas/v1/intent.json",
+  "value": {
+    "type": "string",
+    "description": "The replenishment optimization plan identifier: replenishment or gid://application/optimization-plan/replenishment.",
+    "mapTo": "query_param",
+    "fieldName": "planId"
+  },
+  "inputSchema": {
+    "$ref": "https://extensions.shopifycdn.com/shopifycloud/schemas/v1/application/optimization-plan.json",
+    "type": "object",
+    "properties": {
+      "title": { "type": "string", "maxLength": 120, "mapTo": "hash" },
+      "summary": { "type": "string", "maxLength": 2000, "mapTo": "hash" },
+      "budget": { "type": "integer", "minimum": 1, "maximum": 200000, "mapTo": "hash" },
+      "items": {
+        "type": "array", "maxItems": 20, "mapTo": "hash",
+        "items": { "type": "object", "properties": {
+          "sku": { "type": "string", "maxLength": 40 },
+          "quantity": { "type": "integer", "minimum": 1, "maximum": 10000 },
+          "reason": { "type": "string", "maxLength": 500 }
+        } }
+      }
+    }
+  }
+}

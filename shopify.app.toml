@@ -1,0 +1,24 @@
+# Replace client_id and both example.com URLs before linking/deploying this app.
+client_id = "00000000000000000000000000000000"
+name = "Company Replenishment"
+application_url = "https://your-app.example.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+[access_scopes]
+scopes = ""
+
+[auth]
+redirect_urls = ["https://your-app.example.com/auth/callback"]
+
+[webhooks]
+api_version = "2026-10"
+
+[[webhooks.subscriptions]]
+topics = ["app/uninstalled"]
+uri = "/webhooks/app/uninstalled"
+
+[sidekick]
+extensions_summary = "Analyze internal warehouse stock, inbound shipments and purchasing rules, prepare replenishment optimization plans, and register replenishment requests after merchant review."

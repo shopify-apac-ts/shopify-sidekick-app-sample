@@ -1,0 +1,24 @@
+[
+  {
+    "$schema": "https://extensions.shopifycdn.com/shopifycloud/schemas/v1/tool.json",
+    "name": "get_company_inventory",
+    "description": "Read internal company inventory, sales averages, confirmed dated inbound shipments, supplier delays and purchasing rules. Fixed dummy snapshot; requested replenishment is not confirmed inbound.",
+    "inputSchema": { "type": "object", "properties": {}, "additionalProperties": false }
+  },
+  {
+    "$schema": "https://extensions.shopifycdn.com/shopifycloud/schemas/v1/tool.json",
+    "name": "get_replenishment_plan",
+    "description": "Read a rule-based inventory replenishment optimization draft, ordered by stockout urgency and constrained by budget. Includes budget exclusions and a resource link to open the editor. This does not save a request.",
+    "inputSchema": {
+      "type": "object",
+      "properties": { "budget": { "type": "integer", "minimum": 1, "maximum": 200000, "description": "Budget in JPY. Defaults to 100000." } },
+      "additionalProperties": false
+    }
+  },
+  {
+    "$schema": "https://extensions.shopifycdn.com/shopifycloud/schemas/v1/tool.json",
+    "name": "get_replenishment_requests",
+    "description": "Read the ten most recent registered request summaries. Supply an id or reference for five lines per page; use nextOffset for remaining lines. Reasons are truncated at 260 characters, with full text in the app. Requests are purchasing instructions, not confirmed shipments.",
+    "inputSchema": { "type": "object", "properties": { "id": { "type": "string", "maxLength": 50 }, "offset": { "type": "integer", "minimum": 0, "maximum": 20 } }, "additionalProperties": false }
+  }
+]
