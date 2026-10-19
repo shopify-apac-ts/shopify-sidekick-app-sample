@@ -139,7 +139,7 @@ sequenceDiagram
     App->>App: Validate prices, budget, quantities, and constraints
     App-->>Editor: Validated total and current revision
     Editor->>Editor: Update draft in React state
-    Editor-->>Sidekick: Staged; awaiting merchant registration
+    Editor-->>Sidekick: Staged and awaiting merchant registration
     Merchant->>Editor: Click Register request
     Editor->>App: Authenticated POST /api/requests with plan, revision, and UUID
     App->>App: Verify origin and authenticated shop
